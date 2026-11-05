@@ -1,5 +1,27 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package MutualExclusion;
 
 option go_package = "./gRPC";
+
+message Request_message {
+  int64 logical_time;
+  string node_id;
+}
+
+message Reply_message {
+  int64 logical_time;
+  string node_id;
+  string reply_id;
+
+}
+
+service Ricart_Agawala {
+  rpc Request(Request_message)
+      returns(google.protobuf.Empty);
+
+  rpc Reply(Reply_message)
+      returns(google.protobuf.Empty);
+}
