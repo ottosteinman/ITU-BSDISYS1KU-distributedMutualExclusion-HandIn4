@@ -229,9 +229,9 @@ func (n *Node) Workload(ctx context.Context, rounds int) {
 		logger.Log(n.id, "ENTER_CS", fmt.Sprintf("ts=%d", ts))
 
 		// Critical section log
-		logger.Log(n.id, "In Critical section", "Sleeping to emulate action")
+		logger.Log(n.id, "IN_CS", "Sleeping")
 		time.Sleep(200 * time.Millisecond) // simulated actions
-		logger.Log(n.id, "Out Critical sectione", "DONE")
+		logger.Log(n.id, "OUT_CS", "Done")
 
 		n.ExitCS()
 	}
