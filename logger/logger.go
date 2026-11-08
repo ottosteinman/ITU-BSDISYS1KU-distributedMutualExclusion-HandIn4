@@ -35,6 +35,10 @@ func Error(format string, args ...any) {
 	fileLogger.Println(line)
 }
 
+func Log(nodeID string, event string, details string) {
+	Info("node=%s event=%s %s", nodeID, event, details)
+}
+
 /*
 examples to be used in the .go file containing the Ricart-Agrawala algorithm:
 
